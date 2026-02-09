@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Kanha Cakes and Chocolates</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="images/bakery-background.css">
+    <link rel="stylesheet" href="images/bakery-images.css">
+    <link rel="stylesheet" href="images/image-optimization.css">
+    <link rel="stylesheet" href="images/enhanced-styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <svg viewBox="0 0 100 100" class="logo-svg">
+                        <circle cx="50" cy="50" r="45" fill="#ff8c00" stroke="#ff6b35" stroke-width="2" />
+                        <rect x="25" y="45" width="50" height="8" rx="4" fill="#ffd700" stroke="#daa520"
+                            stroke-width="1" />
+                        <circle cx="35" cy="49" r="1.5" fill="#8b4513" />
+                        <circle cx="45" cy="49" r="1.5" fill="#8b4513" />
+                        <circle cx="55" cy="49" r="1.5" fill="#8b4513" />
+                        <circle cx="65" cy="49" r="1.5" fill="#8b4513" />
+                    </svg>
+                    <span class="logo-text">Kanha Cakes and Chocolates</span>
+                </a>
+            </div>
+
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="order.html" class="nav-link active">Order</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="admin penle" class="nav-link">Admin Panel</a>
+                <div id="authSection"></div>
+            </div>
+
+            <div class="mobile-menu-btn" id="mobileMenuBtn">☰</div>
+        </div>
+    </nav>
+
+    <div class="order-page">
+        <!-- Terms and Conditions Button -->
+        <button id="viewTermsBtn" class="terms-btn">View Terms & Conditions</button>
+
+        <!-- Order Section -->
+        <section class="order-section">
+            <div class="container">
+                <h1 class="order-title">Order Your Cake</h1>
+
+                <div class="order-card">
+                    <div class="card-header">
+                        <h2>Custom Cake Order Form</h2>
+                    </div>
+
+                    <div class="card-content">
+                        <form class="order-form" id="orderForm">
+                            <div class="form-group">
+                                <label for="customerName">Your Name</label>
+                                <input type="text" id="customerName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerEmail">Email</label>
+                                <input type="email" id="customerEmail" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerPhone">Phone Number</label>
+                                <input type="tel" id="customerPhone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="eventDate">Event Date</label>
+                                <input type="date" id="eventDate" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cakeType">Cake Type</label>
+                                <select id="cakeType" required>
+                                    <option value="">Select a cake</option>
+                                    <option value="chocolate">Decadent Chocolate</option>
+                                    <option value="vanilla">Classic Vanilla Dream</option>
+                                    <option value="lemon">Zesty Lemon Drizzle</option>
+                                    <option value="velvet">Red Velvet</option>
+                                    <option value="carrot">Spiced Carrot Cake</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cakeWeight">Weight (grams or kg)</label>
+                                <input type="text" id="cakeWeight" placeholder="e.g., 500g, 1kg, 1.5kg" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="specialRequests">Special Requests/Allergies</label>
+                                <textarea id="specialRequests" rows="3"></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn" id="submitOrderBtn">Submit Order</button>
+                        </form>
+
+                        <div id="termsWarning" class="terms-warning">
+                            Please read and accept the terms and conditions to place your order.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="delivery-info-card">
+                    <div class="card-header">
+                        <h2>Delivery Information</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="info-section">
+                            <p><strong>Pickup Only:</strong> All orders must be collected from our shop. We are located
+                                at 16, Shantinagar near ITI road, Tarsali, Vadodara Gujarat 390009.</p>
+                            <p><strong>Shop Hours:</strong> 10:00 AM - 11:00 PM daily</p>
+                            <p><strong>Home Delivery:</strong> Available through porter applications (charges apply
+                                separately)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Terms and Conditions Modal -->
+    <div id="termsModal" class="modal" style="display: none;">
+        <div class="modal-content terms-modal-content">
+            <div class="modal-header">
+                <h2>Terms and Conditions</h2>
+                <span class="close-btn" id="closeTerms">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <div class="terms-content">
+                    <div class="terms-section">
+                        <h3>1. Order and Payment</h3>
+                        <p>All orders must be placed at least 24 hours before pickup/delivery. A 50% payment is
+                            compulsory to confirm your order, with the remaining balance due upon pickup. Delivery
+                            options are not available - all orders must be collected from our shop. We accept cash,
+                            credit cards, and digital payments.</p>
+                    </div>
+
+                    <div class="terms-section">
+                        <h3>2. Cancellation and Refund Policy</h3>
+                        <p>Orders must be cancelled at least 12 hours before the scheduled pickup time to be eligible
+                            for a refund. Cancellations made within 12 hours of pickup will not receive any refund. The
+                            50% compulsory payment is non-refundable for late cancellations.</p>
+                    </div>
+
+                    <div class="terms-section">
+                        <h3>3. Allergies and Dietary Requirements</h3>
+                        <p>While we take every precaution to accommodate dietary restrictions, we cannot guarantee that
+                            our products are completely free from allergens. Our kitchen handles nuts, dairy, and
+                            gluten. Customers with severe allergies should be aware of potential cross-contamination
+                            risks.</p>
+                    </div>
+
+                    <div class="terms-section">
+                        <h3>4. Delivery and Pickup</h3>
+                        <p>For home delivery, we use porter online applications and all delivery charges are to be paid
+                            externally by the customer. For pickup orders, customers must collect their products between
+                            10:00 AM and 11:00 PM. The shop closes at 11:00 PM and customers will not be able to collect
+                            their products after closing time.</p>
+                    </div>
+
+                    <div class="terms-section">
+                        <h3>5. Custom Orders</h3>
+                        <p>We use pure and hygienic materials for all our products. Custom orders will incur additional
+                            charges which are not bargainable. We prioritize your health and lifestyle, so please do not
+                            bargain on custom order pricing as we maintain high quality standards for your well-being.
+                        </p>
+                    </div>
+
+                    <div class="terms-acknowledgment">
+                        <p>By placing an order with Kanha Cakes and Chocolates, you acknowledge that you have read,
+                            understood, and agree to these terms and conditions. These terms are subject to change
+                            without notice.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="agreeTerms" class="agree-btn">I Agree</button>
+                <button id="disagreeTerms" class="disagree-btn">I Disagree</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="navigation.js"></script>
+    <script src="order.js"></script>
+</body>
+
+</html>
